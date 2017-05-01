@@ -1,0 +1,48 @@
+{{!< default}}
+
+{{#post}}
+
+<main role="main">
+    <article class="{{post_class}}">
+
+        <header>
+            <h1>{{title}}</h1>
+            <section>
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+            </section>
+        </header>
+
+        <section>
+            {{content}}
+        </section>
+
+        <footer>
+          {{#author}}
+            {{url}}
+          {{/author}}
+        </footer>
+
+    </article>
+</main>
+
+<aside>
+    {{#next_post}}
+    <a href="{{url}}">
+        <section>
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/next_post}}
+    {{#prev_post}}
+    <a href="{{url}}">
+        <section>
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="19"}}&hellip;</p>
+        </section>
+    </a>
+    {{/prev_post}}
+</aside>
+
+{{/post}}
+
