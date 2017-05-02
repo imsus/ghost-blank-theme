@@ -18,4 +18,13 @@ mix.stylus('resources/styl/app.styl', 'assets/css')
        })
      ]
    })
+   .browserSync({
+     proxy: 'localhost:2368',
+     files: [
+       '*.hbs',
+       'resources/**/*.js',
+       'resources/**/*.styl'
+     ],
+     notify: false
+   })
    .disableNotifications()
